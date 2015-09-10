@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>Page test</title>
+		<meta charset="utf8"/>
+	</head>
+
+	<body>
+
+	<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+
+	.scale{
+		overflow: hidden;
+		text-align: center;
+		font-size: smaller;
+	}
+
+	.scale>*{
+		float: left;
+	}
+
+	.scale>*>*{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: block;
+		padding: 0 0.5em;
+	}
+
+	.scale.two>*{
+		width: 50%;
+	}
+
+	.scale.three>*{
+		width: 33.33%;
+	}
+
+	.scale.four>*{
+		width: 25%;
+	}
+
+	.scale .cursor{
+		/*height: 2.5em;*/
+		line-height: 3.2em;
+		overflow: visible;
+		position: relative;
+		text-transform: uppercase;
+		font-weight: bolder;
+	}
+
+	.scale .cursor.empty{
+		visibility: hidden;
+	}
+
+	.scale .cursor:after{
+		content: " ";
+		display: block;
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		margin-left: -0.6em;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0.6em 0.6em 0 0.6em;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+	}
+
+	.scale .cursor>*{
+		color: white;
+		padding: 0.5em;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: normal;
+		border-radius: 0.2em;
+		box-sizing: border-box;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.scale .label{
+		text-transform: uppercase;
+		font-weight: bolder;
+		line-height: 150%;
+	}
+
+	.scale .legend{
+		color: #767676
+	}
+
+	.scale .bar{
+		height: 1.2em;
+		margin-right: 2px;
+	}
+
+	.scale>*:first-child .bar{
+		border-top-left-radius: 7px;
+		border-bottom-left-radius: 7px;
+	}
+
+	.scale>*:last-child .bar{
+		border-top-right-radius: 7px;
+		border-bottom-right-radius: 7px;
+		margin-right: 0;
+	}
+
+	.scale>*.awesome{
+		color: #2FC88F;
+	}
+	.scale>*.borderline{
+		color: #FE9A38;
+	}
+	.scale>*.too-high{
+		color: #FF3F4A;
+	}
+	.scale .awesome .bar,
+	.scale .awesome .cursor>*{
+		background-color: #2FC88F;
+	}
+	.scale .borderline .bar,
+	.scale .borderline .cursor>*{
+		background-color: #FE9A38;
+	}
+	.scale .too-high .bar,
+	.scale .too-high .cursor>*{
+		background-color: #FF3F4A;
+	}
+
+	</style>
+
+	<div style="width:400px">
+
+		<div class="scale two">
+			<div class="awesome">
+				<div class="cursor">
+					<span>voushqsiohuih jiojio</span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Bas</div>
+				<div class="legend">under 0,45 g/L</div>
+			</div>
+			<div class="too-high">
+				<div class="cursor empty">
+					<span></span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Normalllll</div>
+				<div class="legend">above 0,45 g/L</div>
+			</div>
+		</div>
+
+		<div class="scale three">
+			<div class="awesome">
+				<div class="cursor">
+					<span>vous : 92</span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Bas</div>
+				<div class="legend">94cm</div>
+			</div>
+			<div class="borderline">
+				<div class="cursor empty">
+					<span></span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Limite</div>
+				<div class="legend">94cm</div>
+			</div>
+			<div class="too-high">
+				<div class="cursor empty">
+					<span></span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Elevé</div>
+				<div class="legend">102cm</div>
+			</div>
+		</div>
+
+		<div class="scale four">
+			<div class="borderline">
+				<div class="cursor empty">
+					<span></span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Maigreur</div>
+				<div class="legend">16,5 à 25</div>
+			</div>
+			<div class="awesome">
+				<div class="cursor empty">
+					<span></span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Normal</div>
+				<div class="legend">18,5 à 25</div>
+			</div>
+			<div class="borderline">
+				<div class="cursor">
+					<span>Vous : 28</span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Surpoids</div>
+				<div class="legend">25 à 29</div>
+			</div>
+			<div class="too-high">
+				<div class="cursor empty">
+					<span></span>
+				</div>
+				<div class="bar"></div>
+				<div class="label">Obesité</div>
+				<div class="legend">30 à 39,9</div>
+			</div>
+		</div>
+
+	</div>
+
+	</body>
+
+</html>
